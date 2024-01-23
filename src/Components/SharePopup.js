@@ -5,7 +5,7 @@ export default function SharePopup(props) {
   const { Sharepopupv, setPopup, DocID, title } = props;
   const authtoken = localStorage.getItem("sheets-auth-token");
   const baseURL = "https://sheets-backend-tdmn.onrender.com";
-  const publicURL = "http://localhost:3000";
+  const publicURL = "https://sheets-theta.vercel.app";
   const [accessRequests, setAccessRequests] = useState([]);
   useEffect(() => {
     // Fetch access requests when the component mounts
