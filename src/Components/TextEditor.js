@@ -42,7 +42,7 @@ export default function TextEditor() {
   //   Getting Doc ID
   // Connection to Socket
   useEffect(() => {
-    const s = io({baseURL}, {
+    const s = io(baseURL, {
       auth: { token: authtoken },
     });
 
@@ -55,10 +55,10 @@ export default function TextEditor() {
   // Document Load
   useEffect(() => {
     if (socket == null || quill == null) return;
-
     // Checking for unauthorized-access from Backend
     socket.once("unauthorized-access", () => {
       alert("NO ACCESS");
+      quill.enable(false);
     });
 
     socket.on("load-document", ({ data, title,isEdit }) => {
