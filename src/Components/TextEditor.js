@@ -3,6 +3,8 @@ import Quill from "quill";
 import "quill/dist/quill.snow.css";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Navbar from "./Navbar";
+const Delta = Quill.import('delta');
+
 const { io } = require("socket.io-client");
 
 // Options for the TextEditor Toolbar
@@ -38,7 +40,6 @@ export default function TextEditor() {
     }
   }, []);
 
-
   //   Getting Doc ID
   // Connection to Socket
   useEffect(() => {
@@ -58,19 +59,21 @@ export default function TextEditor() {
     // Checking for unauthorized-access from Backend
     socket.once("unauthorized-access", () => {
       console.log("Access Not Given");
-      alert("Access not Given. Please ask owner for access");
-      quill.setContents("Access not Given. Please ask owner for access");
+      const delta = new Delta().insert(
+        "Access not Given. Please ask owner for access"
+      );
+
+      quill.setContents(delta);
       quill.enable(false);
     });
 
-    socket.on("load-document", ({ data, title,isEdit }) => {
+    socket.on("load-document", ({ data, title, isEdit }) => {
       quill.setContents(data);
       setTitle(title);
-      if(isEdit){
+      if (isEdit) {
         setEdit(true);
         quill.enable();
-      }
-      else{
+      } else {
         setEdit(false);
         quill.enable(false);
       }
@@ -144,7 +147,7 @@ export default function TextEditor() {
   }, []);
   return (
     <div>
-      <Navbar title={Title} DocID={docID} edit={editAllow}/>
+      <Navbar title={Title} DocID={docID} edit={editAllow} />
       <div className="DocContainer" ref={wrapperRef}></div>
     </div>
   );
