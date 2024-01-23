@@ -70,6 +70,13 @@ const OTP = () => {
       >
         <div className="SignUp-container p-4 rounded">
           <form className="SignUp-form">
+            <div className="logo" style={{display: 'inline', }}>
+              <img
+                src="../GDOCS.png"
+                className="sheets-logo-icon1"
+                alt="Sheets Logo"
+              ></img>
+            </div>
             <h2 className="mb-4">OTP Sent</h2>
             <div className="mb-3">
               <label htmlFor="username" className="form-label">
@@ -85,7 +92,7 @@ const OTP = () => {
             <button
               type="button"
               onClick={SignUpHandler}
-              className="btn btn-primary my-3 px-3"
+              className="btn btn-primary my-3 px-3" style={{width: '100%'}}
             >
               Sign Up
             </button>

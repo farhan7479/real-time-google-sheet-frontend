@@ -49,11 +49,16 @@ body {
 }
 /* SignUp CSS */
 .SignUPMain {
-  color: white;
-  background-color: #4d4855;
-  background-image: linear-gradient(147deg, #4d4855 0%, #000000 74%);
+  color: black;
+  background-color: #d6d6d6;
   height: 100vh;
   width: 100%;
+}
+.SignUp-container {
+  background-color: white;
+  border-radius: 16px;
+  padding: 56px 70px !important;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.6);
 }
 .SignUpFormInput {
   background-color: rgba(255, 255, 255, 0.08) !important;
@@ -83,7 +88,20 @@ body {
   height: 32px;
   border-radius: 4px;
 }
-
+.sheets-logo-icon1 {
+  height: 52px;
+  background-image: linear-gradient(
+    45deg,
+    #f8f9fa 0%,
+    #e8ecf0 50%,
+    #f8f9fa 100%
+  );
+  margin-bottom: 26px;
+  border-radius: 4px;
+  left: 50%;
+  transform: translate(-50%);
+  position: relative;
+}
 .sheets-logo-icon {
   width: 100%;
   height: 100%;
@@ -365,17 +383,17 @@ body {
   cursor: pointer;
 }
 
-.DocListDiv{
+.DocListDiv {
   margin-top: 18px;
   padding: 8px 36px;
 }
 
-.DocListHeading{
+.DocListHeading {
   font-size: 22px;
   margin-bottom: 12px;
 }
 
-.DocItemDiv{
+.DocItemDiv {
   padding: 8px 20px;
   border-radius: 3px;
   background: rgb(204, 204, 204);
@@ -383,7 +401,7 @@ body {
   transition: all ease-in-out 0.5s;
 }
 
-.DocItemDiv:hover{
+.DocItemDiv:hover {
   background: white;
   cursor: pointer;
 }

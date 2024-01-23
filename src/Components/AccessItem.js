@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 export default function AccessItem(props) {
   const { requestData, DocID } = props;
+  const [Collapsedd, setCollapsed] = useState(false);
   const [selectedAccess, setSelectedAccess] = useState("private");
   const [userInfo, setUserInfo] = useState(null);
   const authtoken = localStorage.getItem("sheets-auth-token");
@@ -28,6 +29,7 @@ export default function AccessItem(props) {
 
         if (response.ok) {
           console.log("User added as editor successfully");
+          setCollapsed(true);
         } else {
           console.error("Failed to add user as editor");
         }
@@ -45,6 +47,7 @@ export default function AccessItem(props) {
 
         if (response.ok) {
           console.log("User added as viewer successfully");
+          setCollapsed(true);
         } else {
           console.error("Failed to add user as viewer");
         }
@@ -82,7 +85,7 @@ export default function AccessItem(props) {
     fetchUserInfo();
   }, [requestData.id]);
   return (
-    <div className="person">
+    <div className={`person ${Collapsedd?("Collapsed"):("")}`}>
       <span className="name">{userInfo?.name}</span>
       <select
         id="access-dropdown"
