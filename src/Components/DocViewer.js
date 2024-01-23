@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import NavbarCopy from "./NavbarCopy";
 import DocItem from "./DocItem";
+import { useNavigate } from "react-router-dom";
 
 export default function DocViewer() {
   const baseURL = "https://sheets-backend-tdmn.onrender.com";
   const [Docs, setDocs] = useState([]);
   const authtoken = localStorage.getItem("sheets-auth-token");
+  const Navigate = useNavigate();
   useEffect(() => {
     if (!authtoken) {
       Navigate("/");
