@@ -28,7 +28,7 @@ const OTP = () => {
         otp: otp,
         email: Email,
       };
-      const url = `${baseURL}api/auth/VerifyOTP`;
+      const url = `${baseURL}/api/auth/VerifyOTP`;
 
       const response = await fetch(url, {
         method: "POST",

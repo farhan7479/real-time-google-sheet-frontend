@@ -36,7 +36,7 @@ const Login = () => {
         pass: Pass,
         email: Email,
       }
-      const url = `${baseURL}api/auth/Login`;
+      const url = `${baseURL}/api/auth/Login`;
 
       const response = await fetch(url, {
         method: 'POST',

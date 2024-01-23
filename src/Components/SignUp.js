@@ -41,7 +41,7 @@ const SignUp = () => {
         pass: Pass,
         email: Email,
       }
-      const url = `${baseURL}api/auth/SignUp`;
+      const url = `${baseURL}/api/auth/SignUp`;
 
       const response = await fetch(url, {
         method: 'POST',
