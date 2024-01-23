@@ -7,6 +7,11 @@ export default function DocViewer() {
   const [Docs, setDocs] = useState([]);
   const authtoken = localStorage.getItem("sheets-auth-token");
   useEffect(() => {
+    if (!authtoken) {
+      Navigate("/");
+    }
+  }, []);
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const url = `${baseURL}/api/document/GetAll`;
