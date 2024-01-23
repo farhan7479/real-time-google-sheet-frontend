@@ -57,7 +57,7 @@ export default function TextEditor() {
     if (socket == null || quill == null) return;
     // Checking for unauthorized-access from Backend
     socket.once("unauthorized-access", () => {
-      alert("NO ACCESS");
+      quill.setContents("Access not Given. Please ask owner for access");
       quill.enable(false);
     });
 
