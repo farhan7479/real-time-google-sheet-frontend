@@ -77,14 +77,10 @@ const SignUp = () => {
           Loading ? "Collapsed" : ""
         }`}
       >
-        <div className="SignUp-container p-4 rounded">
+        <div className="SignUp-container p-5  rounded"style={{ maxWidth: "500px" }}>
           <form className="SignUp-form" >
             <div className="logo" style={{display: 'inline', }}>
-              <img
-                src="../GDOCS.png"
-                className="sheets-logo-icon1"
-                alt="Sheets Logo"
-              ></img>
+             
             </div>
             <h2 className="mb-4">Sign Up</h2>
             <div className="mb-3">
@@ -124,12 +120,12 @@ const SignUp = () => {
               type="button"
               style={{ width: "100%" }}
               onClick={SignUpHandler}
-              className="btn btn-primary my-3 px-3"
+              className="btn btn-secondary my-3 px-3"
             >
               Sign Up
             </button>
             <div style={{ textAlign: "center" }}>
-              <a href="/Login" style={{ textAlign: "center" }}>
+              <a href="/Login" style={{ textAlign: "center", color: "black" }}>
                 Already have an account? Login
               </a>
             </div>

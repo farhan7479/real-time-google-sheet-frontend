@@ -71,13 +71,7 @@ const Login = () => {
       <div className={`SignUPMain container-fluid d-flex align-items-center justify-content-center ${Loading ? "Collapsed" : ""}`}>
         <div className="SignUp-container p-4 rounded">
           <form className="SignUp-form">
-            <div className="logo" style={{display: 'inline', }}>
-              <img
-                src="../GDOCS.png"
-                className="sheets-logo-icon1"
-                alt="Sheets Logo"
-              ></img>
-            </div>
+          
             <h2 className="mb-4">Login</h2>
             <div className="mb-3">
               <label htmlFor="username" className="form-label">Email:</label>
@@ -87,8 +81,8 @@ const Login = () => {
               <label htmlFor="password" className="form-label">Password:</label>
               <input type="password" value={Pass} onChange={PassOnChange} className="form-control SignUpFormInput" />
             </div>
-            <button type="button" onClick={LoginHandler} style={{width: '100%'}} className="btn btn-primary my-3 px-3">Login</button>
-            <div style={{textAlign: 'center'}}>
+            <button type="button" onClick={LoginHandler} style={{width: '100%'}} className="btn btn-secondary my-3 px-3">Login</button>
+            <div style={{textAlign: 'center', color : "black"}}>
               <a href='/Signup' >New? Signup</a>
             </div>
           </form>
